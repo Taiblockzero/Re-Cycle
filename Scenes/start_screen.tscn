@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://e2q7e0ydp25g"]
+
+[ext_resource type="Script" path="res://Script/titleScreen.gd" id="1_n7y74"]
+
+[node name="titleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n7y74")
+
+[node name="startBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 365.0
+offset_top = 105.0
+offset_right = 665.0
+offset_bottom = 222.0
+theme_override_font_sizes/font_size = 50
+text = "Start"
+
+[node name="instructionBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 276.0
+offset_right = 603.0
+offset_bottom = 393.0
+theme_override_font_sizes/font_size = 50
+text = "How to play"
+
+[node name="quitBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 361.0
+offset_top = 439.0
+offset_right = 662.0
+offset_bottom = 556.0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[connection signal="pressed" from="startBtn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="quitBtn" to="." method="_on_quit_btn_pressed"]

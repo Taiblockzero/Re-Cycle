@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmn5woib6vkf0"]
+
+[ext_resource type="Script" path="res://Scenes/endScreen.gd" id="1_ys7av"]
+
+[node name="endScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ys7av")
+
+[node name="mainMenuBtn" type="Button" parent="."]
+offset_left = 364.0
+offset_top = 332.0
+offset_right = 622.0
+offset_bottom = 449.0
+theme_override_font_sizes/font_size = 50
+text = "Play Again"
+
+[connection signal="pressed" from="mainMenuBtn" to="." method="_on_main_menu_btn_pressed"]
