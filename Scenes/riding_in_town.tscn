@@ -17,6 +17,6 @@ texture = ExtResource("1_bptnj")
 position = Vector2(0, 150)
 
 [node name="Mailbox-480x711" type="Sprite2D" parent="."]
-position = Vector2(504, 443)
+position = Vector2(418, 470)
 scale = Vector2(0.202083, 0.202083)
 texture = ExtResource("3_wgvoa")
