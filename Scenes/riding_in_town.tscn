@@ -1,22 +1,75 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc5fpkerhvyki"]
+[gd_scene load_steps=8 format=3 uid="uid://cc5fpkerhvyki"]
 
 [ext_resource type="Texture2D" uid="uid://xpgbmrsnvwkb" path="res://Assets/bg_placeholder.png" id="1_bptnj"]
 [ext_resource type="PackedScene" uid="uid://dwkex04g3kafw" path="res://Scenes/player.tscn" id="2_eejfw"]
+[ext_resource type="Script" path="res://Script/mailboxHitbox.gd" id="3_j0sct"]
+[ext_resource type="Texture2D" uid="uid://dayee7j8vpoy5" path="res://Assets/Road.png" id="3_n5oip"]
 [ext_resource type="Texture2D" uid="uid://bcyoimkdr488a" path="res://Assets/Mailbox - 480x711.png" id="3_wgvoa"]
+[ext_resource type="Script" path="res://Scenes/Mailbox-480x711.gd" id="4_6vlim"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5so0"]
+size = Vector2(732.321, 942.733)
 
 [node name="RidingInTown" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 
-[node name="BgPlaceholder" type="Sprite2D" parent="Sprite2D"]
+[node name="BgPlaceholder" type="Sprite2D" parent="Background"]
 position = Vector2(2050, 324)
 scale = Vector2(0.999512, 0.838542)
 texture = ExtResource("1_bptnj")
 
-[node name="Player" parent="." instance=ExtResource("2_eejfw")]
-position = Vector2(0, 150)
+[node name="Road" type="Sprite2D" parent="Background"]
+position = Vector2(546, 334)
+scale = Vector2(0.569445, 0.569445)
+texture = ExtResource("3_n5oip")
 
-[node name="Mailbox-480x711" type="Sprite2D" parent="."]
+[node name="Road2" type="Sprite2D" parent="Background"]
+position = Vector2(1636, 334)
+scale = Vector2(0.569445, 0.569445)
+texture = ExtResource("3_n5oip")
+
+[node name="Road3" type="Sprite2D" parent="Background"]
+position = Vector2(2727, 334)
+scale = Vector2(0.569445, 0.569445)
+texture = ExtResource("3_n5oip")
+
+[node name="Road4" type="Sprite2D" parent="Background"]
+position = Vector2(3820, 334)
+scale = Vector2(0.569445, 0.569445)
+texture = ExtResource("3_n5oip")
+
+[node name="Mailbox-480x711" type="Sprite2D" parent="Background"]
 position = Vector2(418, 470)
 scale = Vector2(0.202083, 0.202083)
 texture = ExtResource("3_wgvoa")
+script = ExtResource("4_6vlim")
+
+[node name="mailboxHitbox" type="Area2D" parent="Background/Mailbox-480x711"]
+script = ExtResource("3_j0sct")
+
+[node name="Control" type="Control" parent="Background/Mailbox-480x711/mailboxHitbox"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -445.362
+offset_top = -3.05176e-05
+offset_right = -133.362
+offset_bottom = 490.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/Mailbox-480x711/mailboxHitbox/Control"]
+layout_mode = 0
+offset_left = -9.89696
+offset_top = -920.414
+offset_right = 817.103
+offset_bottom = -301.414
+theme_override_font_sizes/normal_font_size = 100
+text = "Press 'E' to fill mailbox"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Mailbox-480x711/mailboxHitbox"]
+position = Vector2(-9.89695, 14.8454)
+shape = SubResource("RectangleShape2D_s5so0")
+
+[node name="Player" parent="." instance=ExtResource("2_eejfw")]
+position = Vector2(0, 150)
+
+[connection signal="body_entered" from="Background/Mailbox-480x711/mailboxHitbox" to="Background/Mailbox-480x711" method="_on_mailbox_hitbox_body_entered"]
