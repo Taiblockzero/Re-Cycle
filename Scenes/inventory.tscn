@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://s8uftho0n6iu"]
+[gd_scene load_steps=6 format=3 uid="uid://s8uftho0n6iu"]
 
 [ext_resource type="Texture2D" uid="uid://bp67sk025t6yp" path="res://Assets/inventorybgTemp.png" id="1_2kgti"]
+[ext_resource type="Script" path="res://Script/inventory.gd" id="1_k0gbm"]
 [ext_resource type="Texture2D" uid="uid://c4xth72ooxau3" path="res://Assets/inventorySlutTemp.png" id="2_2bqi8"]
 [ext_resource type="Script" path="res://Script/Slot.gd" id="3_1hqtk"]
 
@@ -8,6 +9,7 @@
 texture = ExtResource("2_2bqi8")
 
 [node name="Inventory" type="Node2D"]
+script = ExtResource("1_k0gbm")
 
 [node name="backgroundImg" type="TextureRect" parent="."]
 offset_left = 3.0

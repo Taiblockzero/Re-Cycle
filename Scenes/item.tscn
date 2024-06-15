@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dhpbgr7uf7i03" path="res://smoll.png" id="2_lefyr"]
 
 [node name="Item" type="Node2D"]
+z_index = 1
 script = ExtResource("1_g6ugr")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 16.0
 offset_bottom = 16.0
+mouse_filter = 2
 texture = ExtResource("2_lefyr")
