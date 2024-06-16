@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dwkex04g3kafw" path="res://Scenes/player.tscn" id="2_eejfw"]
 [ext_resource type="Texture2D" uid="uid://dayee7j8vpoy5" path="res://Assets/Road.png" id="3_n5oip"]
 [ext_resource type="Texture2D" uid="uid://bcyoimkdr488a" path="res://Assets/Mailbox - 480x711.png" id="3_wgvoa"]
-[ext_resource type="Script" path="res://Scenes/Mailbox-480x711.gd" id="4_6vlim"]
+[ext_resource type="Script" path="res://Script/Mailbox-480x711.gd" id="4_6vlim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5so0"]
 size = Vector2(732.321, 942.733)

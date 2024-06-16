@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cmn5woib6vkf0"]
 
-[ext_resource type="Script" path="res://Scenes/endScreen.gd" id="1_ys7av"]
+[ext_resource type="Script" path="res://Script/endScreen.gd" id="1_ys7av"]
 
 [node name="endScreen" type="Control"]
 layout_mode = 3
@@ -12,6 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_ys7av")
 
 [node name="mainMenuBtn" type="Button" parent="."]
+layout_mode = 0
 offset_left = 364.0
 offset_top = 332.0
 offset_right = 622.0
