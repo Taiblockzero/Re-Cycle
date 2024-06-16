@@ -3,7 +3,6 @@ extends Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#$mailboxHitbox.connect("body_entered", self, "_on_mailbox_hitbox_body_entered")
 	$mailboxHitbox/Control.hide()
 
 
@@ -14,3 +13,7 @@ func _process(delta):
 
 func _on_mailbox_hitbox_body_entered(body):
 	$mailboxHitbox/Control.show()
+
+
+func _on_mailbox_hitbox_body_exited(body):
+	$mailboxHitbox/Control.hide()

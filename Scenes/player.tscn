@@ -39,7 +39,7 @@ func _process(delta):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dy4x3"]
 size = Vector2(104, 176)
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_t8vwk")
 
 [node name="Monkey" type="AnimatedSprite2D" parent="."]
